@@ -70,13 +70,15 @@ int main() {
             while (_CP0_GET_COUNT() < 48000000/2){
                 LATAbits.LATA4 = 0;
             }
-             while (_CP0_GET_COUNT() < 48000000){
+            
+            _CP0_SET_COUNT(0);
+            
+            while (_CP0_GET_COUNT() < 48000000/4){
                 LATAbits.LATA4 = 1;
             }
-             while (_CP0_GET_COUNT() < 48000000/0.5){
+            while (_CP0_GET_COUNT() < 48000000/2){
                 LATAbits.LATA4 = 0;
             }
-              
             
          
     }
